@@ -52,12 +52,7 @@
       gap: 25px;
       justify-items: center;
       width: 100%;
-      margin-bottom: 60px; /* espacio antes del footer integrado */
-    }
-
-    .menu a:last-child {
-      grid-column: 1 / -1;
-      justify-self: center;
+      margin-bottom: 0; /* espacio antes del footer ahora integrado */
     }
 
     .card {
@@ -81,14 +76,27 @@
       color: white;
     }
 
-    /* Footer integrado */
+    /* Footer negro integrado */
     footer {
       width: 100%;
       text-align: center;
       padding: 40px 0;
       font-size: 1rem;
-      color: rgba(255,255,255,0.8);
+      color: rgba(255,255,255,0.9);
+      background: #000000;
+      box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
       margin-top: auto; /* empuja el footer al final */
+    }
+
+    footer a {
+      color: #3b82f6;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #9333ea;
     }
 
     /* Responsive */
@@ -107,11 +115,10 @@
       <a href="who.html" class="card">¿Quiénes somos?</a>
       <a href="activities.html" class="card">Actividades</a>
       <a href="proyects.html" class="card">Proyectos</a>
-      <a href="contact.html" class="card">Contacto</a>
     </main>
 
     <footer>
-      © 2025 Asociación de Inteligencia Artificial - URJC
+      <p><a href="contact.html">Contacto</a> | © 2025 Asociación de Inteligencia Artificial - URJC</p>
     </footer>
   </div>
 </body>
