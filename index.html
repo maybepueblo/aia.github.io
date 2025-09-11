@@ -4,96 +4,103 @@
   <meta charset="UTF-8">
   <title>AIA - Asociación de Inteligencia Artificial</title>
   <style>
-    /* Reset básico */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
 
-    /* Fondo degradado y fuente */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height: 100vh;
-      display: flex;
-      justify-content: center;
+      min-height:100vh;
+      display:flex; 
+      flex-direction: column;
+      justify-content: center; 
       align-items: center;
       background: linear-gradient(135deg, #3b82f6, #9333ea);
-      color: white;
-      text-align: center;
-      padding: 20px;
+      color:white;
+      text-align:center;
+      padding:20px;
     }
 
-    /* Contenedor principal */
     .container {
-      max-width: 900px;
-      width: 100%;
+      max-width:900px; 
+      width:100%;
+      flex:1;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
 
+    /* Logo circular integrado con fondo */
     header .logo {
-     width: 200px;      /* tamaño del logo */
-     max-width: 100%;
-     height: auto;
-     margin-bottom: 0.5em;
-     border-radius: 50%; /* esto lo hace circular */
-     opacity: 0.8;
-     filter: brightness(0.9);
+      width:180px;
+      max-width:100%;
+      height:auto;
+      margin-bottom:0.5em;
+      border-radius:50%;
+      opacity:0.8;          /* suave integración */
+      filter: brightness(0.9);
     }
 
-    /* Subtítulo */
     .subtitle {
-      font-size: 1.3rem;
-      color: #e2e8f0;
-      margin-bottom: 2em;
+      font-size:1.3rem; 
+      color:#e2e8f0; 
+      margin-bottom:2em;
     }
 
     /* Menú de tarjetas */
     .menu {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
-      gap: 25px;
-      justify-items: center; /* centra las tarjetas */
+      display:grid; 
+      grid-template-columns:repeat(3,1fr); 
+      gap:25px; 
+      justify-items:center;
+      width:100%;
     }
 
-    /* Hacer que la última tarjeta ocupe toda la fila */
-    .menu a:last-child {
-      grid-column: 1 / -1; /* ocupa todas las columnas */
-      justify-self: center;
+    .menu a:last-child { 
+      grid-column:1/-1; 
+      justify-self:center;
     }
 
-    /* Tarjetas */
     .card {
-      background: white;
-      color: #1e293b;
-      padding: 40px 20px;
-      border-radius: 20px;
-      text-decoration: none;
-      font-size: 1.2rem;
-      font-weight: bold;
-      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      background:white; 
+      color:#1e293b; 
+      padding:40px 20px; 
+      border-radius:20px;
+      text-decoration:none; 
+      font-size:1.2rem; 
+      font-weight:bold; 
+      box-shadow:0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
-      width: 100%;
-      max-width: 220px;
+      width:100%; 
+      max-width:220px;
     }
 
-    /* Hover animado */
     .card:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: #3b82f6;
-      color: white;
+      transform:translateY(-8px) scale(1.05); 
+      background:#3b82f6; 
+      color:white;
     }
 
-    /* Responsive en móvil */
-    @media (max-width: 800px) {
-      .menu {
-        grid-template-columns: repeat(2, 1fr);
-      }
+    @media(max-width:800px){ .menu{grid-template-columns:repeat(2,1fr);} }
+    @media(max-width:500px){ .menu{grid-template-columns:1fr;} }
+
+    /* Barra de contacto al pie */
+    footer {
+      width:100%;
+      background-color:#111;
+      text-align:center;
+      padding:15px 0;
     }
 
-    @media (max-width: 500px) {
-      .menu {
-        grid-template-columns: 1fr;
-      }
+    footer .contact-bar {
+      color:white;
+      text-decoration:none;
+      font-weight:bold;
+      font-size:1.1rem;
+      transition: all 0.3s ease;
+    }
+
+    footer .contact-bar:hover {
+      color:#3b82f6;
     }
 
   </style>
@@ -101,7 +108,7 @@
 <body>
   <div class="container">
     <header>
-      <img src="logo.jpg" alt="Logo AIA" class="logo">
+      <img src="logo.png" alt="Logo AIA" class="logo">
       <p class="subtitle">Universidad Rey Juan Carlos</p>
     </header>
 
@@ -112,5 +119,10 @@
       <a href="contact.html" class="card">Contacto</a>
     </main>
   </div>
+
+  <!-- Footer -->
+  <footer>
+    <a href="contact.html" class="contact-bar">Contacto</a>
+  </footer>
 </body>
 </html>
