@@ -1,252 +1,136 @@
 <!DOCTYPE html>
-
 <html lang="es">
-
 <head>
-
   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AIA - Asociación de Inteligencia Artificial</title>
-
   <style>
-
     /* Reset básico */
-
     * { margin:0; padding:0; box-sizing:border-box; }
 
-
     html, body {
-
       height: 100%;
-
       font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
       background: linear-gradient(135deg,#3b82f6,#9333ea);
-
       color:white;
-
     }
-
 
     body {
-
       display: flex;
-
       flex-direction: column;
-
       min-height: 100vh;
-
     }
-
 
     .container {
-
       flex: 1;
-
       display: flex;
-
       flex-direction: column;
-
       justify-content: center;
-
       align-items: center;
-
-      padding: 40px 20px 0 20px;
-
+      /* --- CAMBIO REALIZADO AQUÍ --- */
+      padding: 40px 20px 40px 20px;
     }
-
 
     header {
-
       text-align: center;
-
       margin-bottom: 40px;
-
     }
-
 
     header .logo {
-
       width: 200px;
-
       max-width: 100%;
-
       height: auto;
-
       border-radius: 50%;
-
       border: 5px solid rgba(255,255,255,0.3);
-
       box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-
       margin-bottom: 0.5em;
-
     }
-
 
     .subtitle {
-
       font-size: 1.3rem;
-
       color: #e2e8f0;
-
       margin-bottom: 2em;
-
     }
-
 
     /* Menú de tarjetas con grid adaptable */
-
     .menu {
-
       display: grid;
-
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-
       gap: 25px;
-
       justify-items: center;
-
       width: 100%;
-
       max-width: 900px;
-
       margin-bottom: 0; 
-
     }
-
 
     .card {
-
       background: rgba(255,255,255,0.9);
-
       color: #1e293b;
-
       padding: 40px 20px;
-
       border-radius: 20px;
-
       text-decoration: none;
-
       font-size: 1.2rem;
-
       font-weight: bold;
-
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-
       transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
-
       width: 100%;
-
       max-width: 220px;
-
       text-align: center;
-
     }
-
 
     .card:hover {
-
       transform: translateY(-8px) scale(1.05);
-
       background: #3b82f6;
-
       color: white;
-
     }
-
 
     footer {
-
       width: 100%;
-
       text-align: center;
-
       padding: 40px 0;
-
       font-size: 1rem;
-
       color: white;
-
     }
-
 
     footer a {
-
       color: white;
-
       text-decoration: underline;
-
       font-weight: bold;
-
       transition: color 0.3s ease;
-
     }
-
 
     footer a:hover {
-
       color: #e2e8f0;
-
     }
-
 
     /* Responsive: grid automáticamente se adapta */
-
     @media(max-width:600px){
-
       .menu {
-
         grid-template-columns: 1fr;
-
         gap: 20px;
-
       }
-
       .card {
-
         max-width: 90%;
-
       }
-
     }
-
   </style>
-
 </head>
-
 <body>
-
   <div class="container">
-
     <header>
-
       <img src="logo.jpg" alt="Logo AIA" class="logo">
-
       <p class="subtitle"><b>Asociación de Inteligencia Artificial</b></p>
-
     </header>
 
-
     <main class="menu">
-
       <a href="activities.html" class="card">Actividades</a>
-
       <a href="proyects.html" class="card">Proyectos</a>
-
       <a href="who.html" class="card">Nosotros</a>
-
     </main>
-
   </div>
 
-
   <footer>
-
     <p><a href="contact.html">Contacto</a> | © 2025 Asociación de Inteligencia Artificial - URJC</p>
-
   </footer>
-
 </body>
-
-</html> 
+</html>
