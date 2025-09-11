@@ -20,7 +20,7 @@
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 40px 20px;
+      padding: 40px 20px 0 20px;
     }
 
     header {
@@ -52,7 +52,8 @@
       gap: 25px;
       justify-items: center;
       width: 100%;
-      margin-bottom: 0; /* espacio antes del footer ahora integrado */
+      margin-bottom: 0; 
+      flex: 1;
     }
 
     .card {
@@ -76,27 +77,25 @@
       color: white;
     }
 
-    /* Footer negro integrado */
+    /* Footer simple sobre el fondo */
     footer {
       width: 100%;
       text-align: center;
       padding: 40px 0;
       font-size: 1rem;
-      color: rgba(255,255,255,0.9);
-      background: #000000;
-      box-shadow: 0 -4px 15px rgba(0,0,0,0.5);
-      margin-top: auto; /* empuja el footer al final */
+      color: white;
+      flex-shrink: 0;
     }
 
     footer a {
-      color: #3b82f6;
-      text-decoration: none;
+      color: white;
+      text-decoration: underline;
       font-weight: bold;
       transition: color 0.3s ease;
     }
 
     footer a:hover {
-      color: #9333ea;
+      color: #e2e8f0;
     }
 
     /* Responsive */
