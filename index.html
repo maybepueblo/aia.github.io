@@ -6,17 +6,21 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; }
 
+    html, body {
+      height: 100%;
+    }
+
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      min-height:100vh;
       display:flex; 
       flex-direction: column;
-      justify-content: center; 
+      justify-content: space-between; /* mantiene footer abajo */
       align-items: center;
       background: linear-gradient(135deg, #3b82f6, #9333ea);
       color:white;
       text-align:center;
       padding:20px;
+      margin:0;
     }
 
     .container {
@@ -53,11 +57,7 @@
       gap:25px; 
       justify-items:center;
       width:100%;
-    }
-
-    .menu a:last-child { 
-      grid-column:1/-1; 
-      justify-self:center;
+      margin-bottom:20px;
     }
 
     .card {
@@ -83,26 +83,28 @@
     @media(max-width:800px){ .menu{grid-template-columns:repeat(2,1fr);} }
     @media(max-width:500px){ .menu{grid-template-columns:1fr;} }
 
-    /* Barra de contacto al pie */
+    /* Footer barra negra ocupando todo el ancho */
     footer {
       width:100%;
       background-color:#111;
       text-align:center;
-      padding:15px 0;
+      padding:20px 0;
+      position: relative; /* footer está al final por flexbox */
+      bottom:0;
     }
 
-    footer .contact-bar {
+    footer a {
       color:white;
       text-decoration:none;
       font-weight:bold;
-      font-size:1.1rem;
+      font-size:1.2rem;
+      display:block;
       transition: all 0.3s ease;
     }
 
-    footer .contact-bar:hover {
+    footer a:hover {
       color:#3b82f6;
     }
-
   </style>
 </head>
 <body>
@@ -116,13 +118,12 @@
       <a href="who.html" class="card">¿Quiénes somos?</a>
       <a href="activities.html" class="card">Actividades</a>
       <a href="proyects.html" class="card">Proyectos</a>
-      <a href="contact.html" class="card">Contacto</a>
     </main>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer barra negra -->
   <footer>
-    <a href="contact.html" class="contact-bar">Contacto</a>
+    <a href="contact.html">Contacto</a>
   </footer>
 </body>
 </html>
