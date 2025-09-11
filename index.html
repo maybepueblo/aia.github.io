@@ -14,27 +14,31 @@
     /* Fondo degradado y fuente */
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
+      min-height: 100vh;
       display: flex;
       justify-content: center;
       align-items: center;
       background: linear-gradient(135deg, #3b82f6, #9333ea);
       color: white;
       text-align: center;
+      padding: 20px;
     }
 
     /* Contenedor principal */
     .container {
       max-width: 900px;
-      padding: 20px;
+      width: 100%;
     }
 
-    /* Título */
-    header h1 {
-      font-size: 3rem;
+    /* Logo */
+    header .logo {
+      width: 250px;
+      max-width: 100%;
+      height: auto;
       margin-bottom: 0.5em;
     }
 
+    /* Subtítulo */
     .subtitle {
       font-size: 1.3rem;
       color: #e2e8f0;
@@ -44,9 +48,15 @@
     /* Menú de tarjetas */
     .menu {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr); /* 3 tarjetas por fila */
       gap: 25px;
-      flex-wrap: wrap;
+      justify-items: center; /* centra las tarjetas */
+    }
+
+    /* Hacer que la última tarjeta ocupe toda la fila */
+    .menu a:last-child {
+      grid-column: 1 / -1; /* ocupa todas las columnas */
+      justify-self: center;
     }
 
     /* Tarjetas */
@@ -60,6 +70,8 @@
       font-weight: bold;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
+      width: 100%;
+      max-width: 220px;
     }
 
     /* Hover animado */
@@ -70,18 +82,24 @@
     }
 
     /* Responsive en móvil */
-    @media (max-width: 500px) {
-      .card {
-        padding: 30px 15px;
-        font-size: 1rem;
+    @media (max-width: 800px) {
+      .menu {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
+
+    @media (max-width: 500px) {
+      .menu {
+        grid-template-columns: 1fr;
+      }
+    }
+
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <h1>Asociación de Inteligencia Artificial</h1>
+      <img src="logo.png" alt="Logo AIA" class="logo">
       <p class="subtitle">Universidad Rey Juan Carlos</p>
     </header>
 
