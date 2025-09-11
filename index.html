@@ -14,11 +14,17 @@
       color:white;
     }
 
-    .container {
-      min-height: 100%;
+    body {
       display: flex;
       flex-direction: column;
-      justify-content: flex-start;
+      min-height: 100vh;
+    }
+
+    .container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       align-items: center;
       padding: 40px 20px 0 20px;
     }
@@ -45,15 +51,16 @@
       margin-bottom: 2em;
     }
 
-    /* Menú de tarjetas */
+    /* Menú de tarjetas centradas */
     .menu {
-      display: grid;
-      grid-template-columns: repeat(3,1fr);
+      display: flex;
+      justify-content: center;
+      align-items: center;
       gap: 25px;
-      justify-items: center;
+      flex-wrap: wrap;
       width: 100%;
+      max-width: 900px;
       margin-bottom: 0; 
-      flex: 1;
     }
 
     .card {
@@ -66,8 +73,7 @@
       font-weight: bold;
       box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
-      width: 100%;
-      max-width: 220px;
+      width: 220px;
       text-align: center;
     }
 
@@ -84,7 +90,6 @@
       padding: 40px 0;
       font-size: 1rem;
       color: white;
-      flex-shrink: 0;
     }
 
     footer a {
@@ -99,8 +104,13 @@
     }
 
     /* Responsive */
-    @media(max-width:800px){ .menu{grid-template-columns:repeat(2,1fr);} }
-    @media(max-width:500px){ .menu{grid-template-columns:1fr;} }
+    @media(max-width:800px){ 
+      .menu{justify-content: center;}
+    }
+    @media(max-width:500px){ 
+      .menu{flex-direction: column; align-items: center;} 
+      .card{width: 80%; max-width: 300px;}
+    }
   </style>
 </head>
 <body>
@@ -111,14 +121,14 @@
     </header>
 
     <main class="menu">
-      <a href="who.html" class="card">¿Quiénes somos?</a>
-      <a href="activities.html" class="card">Actividades</a>
+      <a href="who.html" class="card">Actividades</a>
+      <a href="activities.html" class="card">¿Quiénes somos?</a>
       <a href="proyects.html" class="card">Proyectos</a>
     </main>
-
-    <footer>
-      <p><a href="contact.html">Contacto</a> | © 2025 Asociación de Inteligencia Artificial - URJC</p>
-    </footer>
   </div>
+
+  <footer>
+    <p><a href="contact.html">Contacto</a> | © 2025 Asociación de Inteligencia Artificial - URJC</p>
+  </footer>
 </body>
 </html>
