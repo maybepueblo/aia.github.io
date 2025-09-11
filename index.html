@@ -4,107 +4,97 @@
   <meta charset="UTF-8">
   <title>AIA - Asociación de Inteligencia Artificial</title>
   <style>
+    /* Reset básico */
     * { margin:0; padding:0; box-sizing:border-box; }
 
     html, body {
       height: 100%;
-    }
-
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      display:flex; 
-      flex-direction: column;
-      justify-content: space-between; /* mantiene footer abajo */
-      align-items: center;
-      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg,#3b82f6,#9333ea);
       color:white;
-      text-align:center;
-      padding:20px;
-      margin:0;
     }
 
     .container {
-      max-width:900px; 
-      width:100%;
-      flex:1;
-      display:flex;
+      min-height: 100%;
+      display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: space-between; /* para empujar footer abajo */
       align-items: center;
+      padding: 20px;
+      position: relative;
     }
 
-    /* Logo circular integrado con fondo */
+    header {
+      text-align: center;
+    }
+
+    /* Logo circular */
     header .logo {
-      width:180px;
-      max-width:100%;
-      height:auto;
-      margin-bottom:0.5em;
-      border-radius:50%;
-      opacity:0.8;          /* suave integración */
-      filter: brightness(0.9);
+      width: 200px;
+      max-width: 100%;
+      height: auto;
+      border-radius: 50%;
+      border: 5px solid rgba(255,255,255,0.3);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+      margin-bottom: 0.5em;
     }
 
     .subtitle {
-      font-size:1.3rem; 
-      color:#e2e8f0; 
-      margin-bottom:2em;
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      margin-bottom: 2em;
     }
 
     /* Menú de tarjetas */
     .menu {
-      display:grid; 
-      grid-template-columns:repeat(3,1fr); 
-      gap:25px; 
-      justify-items:center;
-      width:100%;
-      margin-bottom:20px;
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 25px;
+      justify-items: center;
+      width: 100%;
+    }
+
+    /* Última tarjeta ocupa toda la fila y centrada */
+    .menu a:last-child {
+      grid-column: 1 / -1;
+      justify-self: center;
     }
 
     .card {
-      background:white; 
-      color:#1e293b; 
-      padding:40px 20px; 
-      border-radius:20px;
-      text-decoration:none; 
-      font-size:1.2rem; 
-      font-weight:bold; 
-      box-shadow:0 8px 20px rgba(0,0,0,0.3);
+      background: white;
+      color: #1e293b;
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
       transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
-      width:100%; 
-      max-width:220px;
+      width: 100%;
+      max-width: 220px;
     }
 
     .card:hover {
-      transform:translateY(-8px) scale(1.05); 
-      background:#3b82f6; 
-      color:white;
+      transform: translateY(-8px) scale(1.05);
+      background: #3b82f6;
+      color: white;
     }
 
+    /* Footer */
+    footer {
+      width: 100%;
+      height: 60px;
+      background: rgba(30,41,59,0.9);
+      text-align: center;
+      line-height: 60px;
+      position: relative;
+      bottom: 0;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* Responsive */
     @media(max-width:800px){ .menu{grid-template-columns:repeat(2,1fr);} }
     @media(max-width:500px){ .menu{grid-template-columns:1fr;} }
-
-    /* Footer barra negra ocupando todo el ancho */
-    footer {
-      width:100%;
-      background-color:#111;
-      text-align:center;
-      padding:20px 0;
-      position: relative; /* footer está al final por flexbox */
-      bottom:0;
-    }
-
-    footer a {
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      font-size:1.2rem;
-      display:block;
-      transition: all 0.3s ease;
-    }
-
-    footer a:hover {
-      color:#3b82f6;
-    }
   </style>
 </head>
 <body>
@@ -118,12 +108,12 @@
       <a href="who.html" class="card">¿Quiénes somos?</a>
       <a href="activities.html" class="card">Actividades</a>
       <a href="proyects.html" class="card">Proyectos</a>
+      <a href="contact.html" class="card">Contacto</a>
     </main>
-  </div>
 
-  <!-- Footer barra negra -->
-  <footer>
-    <a href="contact.html">Contacto</a>
-  </footer>
+    <footer>
+      © 2025 Asociación de Inteligencia Artificial - URJC
+    </footer>
+  </div>
 </body>
 </html>
