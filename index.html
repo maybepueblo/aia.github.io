@@ -3,7 +3,79 @@
 <head>
   <meta charset="UTF-8">
   <title>AIA - Asociación de Inteligencia Artificial</title>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset básico */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fondo degradado y fuente */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #3b82f6, #9333ea);
+      color: white;
+      text-align: center;
+    }
+
+    /* Contenedor principal */
+    .container {
+      max-width: 900px;
+      padding: 20px;
+    }
+
+    /* Título */
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5em;
+    }
+
+    .subtitle {
+      font-size: 1.3rem;
+      color: #e2e8f0;
+      margin-bottom: 2em;
+    }
+
+    /* Menú de tarjetas */
+    .menu {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 25px;
+    }
+
+    /* Tarjetas */
+    .card {
+      background: white;
+      color: #1e293b;
+      padding: 40px 20px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+      transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
+    }
+
+    /* Hover animado */
+    .card:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: #3b82f6;
+      color: white;
+    }
+
+    /* Responsive en móvil */
+    @media (max-width: 500px) {
+      .card {
+        padding: 30px 15px;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
