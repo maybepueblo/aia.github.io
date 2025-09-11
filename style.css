@@ -1,0 +1,56 @@
+/* Fuente bonita */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #0f172a, #1e293b); /* azul oscuro elegante */
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+/* Contenedor principal */
+.container {
+  max-width: 900px;
+  padding: 20px;
+}
+
+/* Título */
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 0.2em;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #cbd5e1;
+  margin-bottom: 2em;
+}
+
+/* Grid de opciones */
+.menu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+/* Tarjetas */
+.card {
+  background: #1e293b;
+  padding: 40px 20px;
+  border-radius: 15px;
+  text-decoration: none;
+  color: #f8fafc;
+  font-size: 1.2rem;
+  font-weight: bold;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+/* Hover */
+.card:hover {
+  background: #334155;
+  transform: translateY(-5px);
+}
