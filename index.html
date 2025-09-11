@@ -75,6 +75,7 @@
       transition: transform 0.25s ease, background 0.3s ease, color 0.3s ease;
       width: 220px;
       text-align: center;
+      flex-shrink: 0;
     }
 
     .card:hover {
@@ -103,31 +104,38 @@
       color: #e2e8f0;
     }
 
-    /* Responsive */
+    /* Responsive para móviles */
     @media(max-width:800px){ 
-      .menu{justify-content: center;}
+      .menu {
+        justify-content: center;
+        gap: 20px;
+      }
     }
+
     @media(max-width:500px){ 
-      .menu{
+      .menu {
         flex-direction: column; 
         align-items: center; 
         gap: 20px;
       } 
-      .card{width: 90%; max-width: 300px;}
+      .card {
+        width: 90%; 
+        max-width: 300px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <img src="logo.jpg" alt="Logo AIA" class="logo">
-      <p class="subtitle"><b>Asociación de Inteligencia Artificial</b></p>
+      <img src="logo.png" alt="Logo AIA" class="logo">
+      <p class="subtitle">Universidad Rey Juan Carlos</p>
     </header>
 
     <main class="menu">
       <a href="activities.html" class="card">Actividades</a>
       <a href="proyects.html" class="card">Proyectos</a>
-      <a href="who.html" class="card">Nosotros</a>
+      <a href="who.html" class="card">¿Quiénes somos?</a>
     </main>
   </div>
 
