@@ -1,214 +1,271 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <style>
-    /* === PALETA PRINCIPAL === */
-    :root {
-      --color-principal: #4D40AC;
-      --color-oscuro: #221965;
-      --color-claro: #F4F5F0;
-      --color-blanco: #FFFFFF;
-      --color-negro: #000000;
-    }
-
-    /* === ESTILOS GLOBALES === */
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: var(--color-claro);
-      color: var(--color-oscuro);
-      scroll-behavior: smooth;
-    }
-
-    h1, h2, h3 {
-      color: var(--color-oscuro);
-      margin: 0;
-    }
-
-    p {
-      color: var(--color-oscuro);
-      line-height: 1.6;
-    }
-
-    a {
-      text-decoration: none;
-      color: var(--color-principal);
-      transition: color 0.3s;
-    }
-
-    a:hover {
-      color: var(--color-oscuro);
-    }
-
-    /* === ENCABEZADO === */
-    header {
-      background: linear-gradient(135deg, var(--color-principal), var(--color-oscuro));
-      color: var(--color-blanco);
-      padding: 4rem 2rem;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: var(--color-blanco);
-      opacity: 0.9;
-    }
-
-    /* === SECCIONES === */
-    section {
-      padding: 4rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    section:nth-of-type(even) {
-      background-color: var(--color-blanco);
-    }
-
-    section:nth-of-type(odd) {
-      background-color: var(--color-claro);
-    }
-
-    .divider {
-      width: 80px;
-      height: 4px;
-      background: var(--color-principal);
-      margin: 1rem 0 2rem 0;
-      border-radius: 2px;
-    }
-
-    /* === BOTONES === */
-    .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: var(--color-principal);
-      color: var(--color-blanco);
-      border-radius: 2rem;
-      transition: all 0.3s ease;
-      font-weight: bold;
-    }
-
-    .btn:hover {
-      background: var(--color-oscuro);
-      transform: translateY(-2px);
-    }
-
-    /* === PORTFOLIO === */
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .portfolio-item {
-      background: var(--color-blanco);
-      border-radius: 1rem;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-      overflow: hidden;
-      transition: transform 0.3s ease;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-5px);
-    }
-
-    .portfolio-item img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-    }
-
-    .portfolio-item h3 {
-      padding: 1rem;
-      color: var(--color-oscuro);
-    }
-
-    /* === CONTACTO === */
-    footer {
-      background: linear-gradient(135deg, var(--color-oscuro), var(--color-principal));
-      color: var(--color-blanco);
-      text-align: center;
-      padding: 3rem 1rem;
-    }
-
-    footer a {
-      color: var(--color-blanco);
-      font-weight: bold;
-      margin: 0 0.5rem;
-    }
-
-    footer a:hover {
-      color: var(--color-claro);
-    }
-
-    /* === RESPONSIVE === */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2.2rem;
-      }
-      section {
-        padding: 3rem 1.5rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIA - Asociación de Inteligencia Artificial URJC</title>
+    <link rel="icon" type="image" href="logo.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.globe.min.js"></script>
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #221965 0%, #4D40AC 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: scale(1.1);
+        }
+    </style>
 </head>
+<body class="font-sans antialiased text-[#221965] bg-[#F4F5F0]">
+    <!-- Navbar -->
+    <nav class="bg-[#F4F5F0] shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="#inicio">
+                        <img class="h-10 w-10 rounded-full object-cover" src="logo.jpg" alt="AIA Logo">
+                    </a>
+                </div>
+                <div class="hidden md:ml-6 md:flex md:items-center md:space-x-8">
+                    <a href="#inicio" class="text-[#4D40AC] hover:text-[#221965] px-3 py-2 text-sm font-medium">Inicio</a>
+                    <a href="#sobre-nosotros" class="text-[#221965] hover:text-[#4D40AC] px-3 py-2 text-sm font-medium">Sobre Nosotros</a>
+                    <a href="events.html" class="text-[#221965] hover:text-[#4D40AC] px-3 py-2 text-sm font-medium">Eventos</a>
+                    <a href="#contacto" class="text-[#221965] hover:text-[#4D40AC] px-3 py-2 text-sm font-medium">Contacto</a>
+                </div>
 
-<body>
-  <header>
-    <h1>Tu Nombre</h1>
-    <p>Desarrollador • Diseñador • Innovador</p>
-    <a href="#portfolio" class="btn">Ver Proyectos</a>
-  </header>
+                <!-- Botón hamburguesa -->
+                <div class="-mr-2 flex items-center md:hidden">
+                    <button id="menu-btn" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-[#221965] hover:bg-[#4D40AC] hover:text-[#F4F5F0] focus:outline-none transition">
+                        <svg id="icon-menu" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                        <svg id="icon-close" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
 
-  <section id="about">
-    <h2>Sobre Mí</h2>
-    <div class="divider"></div>
-    <p>
-      Soy un apasionado del desarrollo y la creación digital, con enfoque en el diseño limpio, la innovación tecnológica y la experiencia de usuario. Mi trabajo busca combinar estética y funcionalidad de manera coherente.
-    </p>
-  </section>
+                <!-- Menú móvil -->
+                <div id="mobile-menu" class="hidden md:hidden flex flex-col bg-[#F4F5F0] shadow-lg rounded-lg absolute top-16 right-4 w-48 overflow-hidden transform transition-all duration-300 origin-top-right scale-95 opacity-0">
+                    <a href="#inicio" class="px-4 py-2 text-[#221965] hover:bg-[#4D40AC] hover:text-[#F4F5F0] transition">Inicio</a>
+                    <a href="events.html" class="px-4 py-2 text-[#221965] hover:bg-[#4D40AC] hover:text-[#F4F5F0] transition">Eventos</a>
+                    <a href="#sobre-nosotros" class="px-4 py-2 text-[#221965] hover:bg-[#4D40AC] hover:text-[#F4F5F0] transition">Sobre nosotros</a>
+                    <a href="#contacto" class="px-4 py-2 text-[#221965] hover:bg-[#4D40AC] hover:text-[#F4F5F0] transition">Contacto</a>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-  <section id="portfolio">
-    <h2>Proyectos Destacados</h2>
-    <div class="divider"></div>
-    <div class="portfolio-grid">
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto 1" />
-        <h3>Proyecto 1</h3>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto 2" />
-        <h3>Proyecto 2</h3>
-      </div>
-      <div class="portfolio-item">
-        <img src="https://via.placeholder.com/400x250" alt="Proyecto 3" />
-        <h3>Proyecto 3</h3>
-      </div>
-    </div>
-  </section>
+    <!-- Hero -->
+    <section id="inicio" class="hero-gradient pt-24 pb-20 md:pt-32 md:pb-28 text-[#F4F5F0]" data-aos="fade">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 items-center">
+            <div>
+                <h1 class="text-4xl md:text-5xl font-bold mb-6">Asociación de Inteligencia Artificial</h1>
+                <p class="text-xl mb-8">Comunidad de estudiantes de la Universidad Rey Juan Carlos apasionados por la IA y la tecnología.</p>
+                <div class="flex space-x-4">
+                    <a href="#unete" class="bg-[#F4F5F0] text-[#4D40AC] hover:bg-[#EAEAEA] px-6 py-3 rounded-lg font-medium shadow-md transition">Únete</a>
+                    <a href="#eventos" class="border-2 border-[#F4F5F0] hover:bg-[#F4F5F0] hover:text-[#4D40AC] px-6 py-3 rounded-lg font-medium transition">Próximos Eventos</a>
+                </div>
+            </div>
+            <div class="relative">
+                <div id="vanta-globe" class="w-full h-64 md:h-96 rounded-xl"></div>
+            </div>
+        </div>
+    </section>
 
-  <section id="contact">
-    <h2>Contacto</h2>
-    <div class="divider"></div>
-    <p>¿Te gustaría colaborar o tienes alguna pregunta? ¡Hablemos!</p>
-    <a href="mailto:correo@ejemplo.com" class="btn">Enviar Email</a>
-  </section>
+    <!-- Sobre Nosotros -->
+    <section id="sobre-nosotros" class="py-20 bg-[#F4F5F0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-[#4D40AC] mb-4" data-aos="fade-up">Sobre Nosotros</h2>
+            <div class="w-20 h-1 bg-[#221965] mx-auto mb-6"></div>
+            <p class="max-w-2xl mx-auto text-[#221965]" data-aos="fade-up" data-aos-delay="100">
+                La Asociación de Inteligencia Artificial (AIA) de la URJC nace con el objetivo de fomentar el aprendizaje y la investigación en IA entre los estudiantes.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-[#4D40AC] mb-4"><i data-feather="cpu" class="h-10 w-10"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Investigación</h3>
+                    <p class="text-[#221965]">Promovemos proyectos de investigación en IA entre estudiantes y colaboramos con departamentos de la universidad.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-[#4D40AC] mb-4"><i data-feather="users" class="h-10 w-10"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Comunidad</h3>
+                    <p class="text-[#221965]">Creamos un espacio donde los estudiantes pueden compartir conocimientos y experiencias sobre IA.</p>
+                </div>
+                <div class="bg-white p-8 rounded-xl shadow-md card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <div class="text-[#4D40AC] mb-4"><i data-feather="award" class="h-10 w-10"></i></div>
+                    <h3 class="text-xl font-bold mb-3">Formación</h3>
+                    <p class="text-[#221965]">Organizamos talleres, charlas y competiciones para mejorar las habilidades de nuestros miembros en IA.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>&copy; 2025 Tu Nombre. Todos los derechos reservados.</p>
-    <div>
-      <a href="#">LinkedIn</a> • 
-      <a href="#">GitHub</a> • 
-      <a href="#">Twitter</a>
-    </div>
-  </footer>
+    <!-- Eventos -->
+    <section id="eventos" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-[#4D40AC] mb-4" data-aos="fade-up">Próximos Eventos</h2>
+            <div class="w-20 h-1 bg-[#221965] mx-auto mb-6"></div>
+            <p class="max-w-2xl mx-auto text-[#221965]" data-aos="fade-up" data-aos-delay="100">
+                Descubre los próximos talleres, charlas y eventos que hemos preparado para ti.
+            </p>
+            <!-- Tarjetas -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
+                <div class="bg-[#F4F5F0] rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="200">
+                    <img src="http://static.photos/technology/640x360/1" alt="Taller" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#221965]">Introducción a Machine Learning</h3>
+                        <p class="text-[#221965] mb-4">Taller práctico para iniciarse en los fundamentos del aprendizaje automático.</p>
+                        <a href="#" class="text-[#4D40AC] hover:text-[#221965] font-medium flex items-center">Más información <i data-feather="arrow-right" class="h-4 w-4 ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-[#F4F5F0] rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="300">
+                    <img src="http://static.photos/technology/640x360/2" alt="Charla" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#221965]">Ética en IA</h3>
+                        <p class="text-[#221965] mb-4">Charla sobre los desafíos éticos en el desarrollo de sistemas de inteligencia artificial.</p>
+                        <a href="#" class="text-[#4D40AC] hover:text-[#221965] font-medium flex items-center">Más información <i data-feather="arrow-right" class="h-4 w-4 ml-1"></i></a>
+                    </div>
+                </div>
+                <div class="bg-[#F4F5F0] rounded-xl overflow-hidden shadow-md card-hover" data-aos="fade-up" data-aos-delay="400">
+                    <img src="http://static.photos/technology/640x360/3" alt="Hackathon" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-2 text-[#221965]">Hackathon de IA</h3>
+                        <p class="text-[#221965] mb-4">Competición de 24 horas para desarrollar soluciones innovadoras usando IA.</p>
+                        <a href="#" class="text-[#4D40AC] hover:text-[#221965] font-medium flex items-center">Más información <i data-feather="arrow-right" class="h-4 w-4 ml-1"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="events.html" class="inline-flex items-center px-6 py-3 text-base font-medium rounded-md text-[#F4F5F0] bg-[#4D40AC] hover:bg-[#221965] shadow-md">
+                    Ver todos los eventos
+                    <i data-feather="arrow-right" class="h-5 w-5 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Únete -->
+    <section id="unete" class="py-20 bg-[#F4F5F0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+            <div data-aos="fade-right">
+                <h2 class="text-3xl font-bold text-[#4D40AC] mb-6">Únete a nuestra comunidad</h2>
+                <p class="text-[#221965] mb-6">Como miembro de AIA tendrás acceso a eventos, recursos exclusivos y oportunidades para conectar con otros estudiantes apasionados por la IA.</p>
+                <ul class="space-y-3 mb-8 text-[#221965]">
+                    <li class="flex items-start"><i data-feather="check-circle" class="h-5 w-5 text-[#4D40AC] mr-2 mt-1"></i>Acceso prioritario a todos nuestros eventos</li>
+                    <li class="flex items-start"><i data-feather="check-circle" class="h-5 w-5 text-[#4D40AC] mr-2 mt-1"></i>Recursos y materiales exclusivos</li>
+                    <li class="flex items-start"><i data-feather="check-circle" class="h-5 w-5 text-[#4D40AC] mr-2 mt-1"></i>Networking con profesionales</li>
+                </ul>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdjL8Vk1-NiwWCkt5dEeHm3STqfSfl8Vch8UH2BGBwIZs7r_Q/viewform" target="_blank" class="inline-flex items-center px-6 py-3 rounded-md text-[#F4F5F0] bg-[#4D40AC] hover:bg-[#221965] shadow-md">
+                    Hazte socio ahora
+                    <i data-feather="arrow-right" class="h-5 w-5 ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="py-20 bg-[#221965] text-[#F4F5F0]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4" data-aos="fade-up">Contacta con nosotros</h2>
+            <div class="w-20 h-1 bg-[#4D40AC] mx-auto mb-6"></div>
+            <p class="max-w-2xl mx-auto text-[#F4F5F0]" data-aos="fade-up" data-aos-delay="100">
+                ¿Tienes alguna pregunta o sugerencia? No dudes en ponerte en contacto con nosotros.
+            </p>
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="bg-[#4D40AC] rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="mail" class="h-8 w-8"></i>
+                    </div>
+                    <p>asociacion.ia.contacto@gmail.com</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="bg-[#4D40AC] rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="map-pin" class="h-8 w-8"></i>
+                    </div>
+                    <p>Universidad Rey Juan Carlos, Campus de Móstoles</p>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="400">
+                    <div class="bg-[#4D40AC] rounded-full h-16 w-16 flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="instagram" class="h-8 w-8"></i>
+                    </div>
+                    <div class="flex justify-center space-x-4">
+                        <a href="https://www.instagram.com/asociacion_ia/" target="_blank" class="text-[#F4F5F0] hover:text-white social-icon"><i data-feather="instagram" class="h-6 w-6"></i></a>
+                        <a href="https://x.com/asociacion_ia?lang=es" target="_blank" class="text-[#F4F5F0] hover:text-white social-icon"><i data-feather="twitter" class="h-6 w-6"></i></a>
+                        <a href="https://www.linkedin.com/company/asociaci%C3%B3n-de-inteligencia-artificial/posts/?feedView=all" target="_blank" class="text-[#F4F5F0] hover:text-white social-icon"><i data-feather="linkedin" class="h-6 w-6"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#4D40AC] text-[#F4F5F0] py-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 md:flex md:items-center md:justify-between">
+            <div class="flex justify-center md:order-2 space-x-6 mb-6 md:mb-0">
+                <a href="https://www.instagram.com/asociacion_ia/" target="_blank" class="hover:text-white social-icon"><i data-feather="instagram" class="h-5 w-5"></i></a>
+                <a href="https://x.com/asociacion_ia?lang=es" target="_blank" class="hover:text-white social-icon"><i data-feather="twitter" class="h-5 w-5"></i></a>
+                <a href="https://www.linkedin.com/company/asociaci%C3%B3n-de-inteligencia-artificial/posts/?feedView=all" target="_blank" class="hover:text-white social-icon"><i data-feather="linkedin" class="h-5 w-5"></i></a>
+            </div>
+            <p class="text-center text-sm md:text-left">&copy; 2025 Asociación de Inteligencia Artificial (AIA) - URJC. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        AOS.init();
+        feather.replace();
+
+        VANTA.GLOBE({
+            el: "#vanta-globe",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x4D40AC,
+            backgroundColor: 0x221965,
+            size: 0.8
+        });
+
+        const menuBtn = document.getElementById("menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const iconMenu = document.getElementById("icon-menu");
+        const iconClose = document.getElementById("icon-close");
+
+        function toggleMenu() {
+            const isHidden = mobileMenu.classList.contains("hidden");
+            if (isHidden) {
+                mobileMenu.classList.remove("hidden");
+                setTimeout(() => mobileMenu.classList.remove("scale-95", "opacity-0"), 10);
+            } else {
+                mobileMenu.classList.add("scale-95", "opacity-0");
+                setTimeout(() => mobileMenu.classList.add("hidden"), 300);
+            }
+            iconMenu.classList.toggle("hidden");
+            iconClose.classList.toggle("hidden");
+        }
+
+        menuBtn.addEventListener("click", toggleMenu);
+        document.querySelectorAll("#mobile-menu a").forEach(link => link.addEventListener("click", toggleMenu));
+        document.addEventListener("click", e => {
+            if (!menuBtn.contains(e.target) && !mobileMenu.contains(e.target) && !mobileMenu.classList.contains("hidden")) toggleMenu();
+        });
+    </script>
 </body>
 </html>
